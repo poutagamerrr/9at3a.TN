@@ -17,8 +17,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL_1 || process.env.FRONTEND_URL_2 || 'http://localhost:3000',
-  credentials: true,
+  origin: [process.env.FRONTEND_URL_1, process.env.FRONTEND_URL_2, 'http://localhost:3000'],
 }));
 app.use(express.json());
 app.use(morgan('dev'));
